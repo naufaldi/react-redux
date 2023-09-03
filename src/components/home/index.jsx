@@ -2,7 +2,11 @@
 import Button from '../common/button'
 import reactLogo from '../../assets/react.svg'
 import viteLogo from '/vite.svg'
+import ButtonAction from './ButtonAction'
+import { useSelector } from 'react-redux'
 const Home = ({count, setCount}) => {
+  const counter = useSelector((state) => state.counter.value);
+
   return (
     <>
       <div>
@@ -18,6 +22,7 @@ const Home = ({count, setCount}) => {
        <Button count={count} setCount={setCount}>
        count is
        </Button>
+       <h1>Counter React Redux: {counter}</h1>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -25,6 +30,8 @@ const Home = ({count, setCount}) => {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      
+      <ButtonAction/>
     </>
   )
 }
