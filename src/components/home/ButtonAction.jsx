@@ -1,14 +1,17 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from '../../counterSlice';
+import { changeColor } from '../../colorSlice';
+import Button from '../common/buttons';
 
 const ButtonAction = () => {
   
   const dispatch = useDispatch();
   return (
     <div>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <Button onClick={() => dispatch(increment())}>Increment</Button>
+      <Button onClick={() => dispatch(decrement())}>Decrement</Button>
+     
     </div>
   )
 }

@@ -4,9 +4,10 @@ import reactLogo from '../../assets/react.svg'
 import viteLogo from '/vite.svg'
 import ButtonAction from './ButtonAction'
 import { useSelector } from 'react-redux'
+import ButtonColor from './ButtonColor'
 const Home = ({count, setCount}) => {
   const counter = useSelector((state) => state.counter.value);
-
+  const color = useSelector((state)=> state.color.value);
   return (
     <>
       <div>
@@ -23,6 +24,7 @@ const Home = ({count, setCount}) => {
        count is
        </Button>
        <h1>Counter React Redux: {counter}</h1>
+       <h1>Color React Redux: {color ? 'red' : 'blue'}</h1>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -32,6 +34,7 @@ const Home = ({count, setCount}) => {
       </p>
       
       <ButtonAction/>
+      <ButtonColor/>
     </>
   )
 }
